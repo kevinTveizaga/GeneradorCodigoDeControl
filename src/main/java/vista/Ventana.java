@@ -224,8 +224,9 @@ public class Ventana extends javax.swing.JFrame {
             nroAuth = jTextField1.getText().trim();
             nroFact = jTextField2.getText().trim();
             ciNit = jTextField3.getText().trim();
-            fecha = jTextField4.getText().trim();
-            monto = jTextField5.getText().trim().replace(',', '.');
+            fecha = jTextField4.getText().trim().replace("/", "");
+            String montoFormateado = jTextField5.getText().trim().replace(".", "").replace(',', '.');
+            monto = montoFormateado;
             llave = jTextField6.getText().trim().replace(" ", "");
             generador = new Generator(nroAuth, nroFact, ciNit, fecha, monto, llave);
             String codigoDeControl = generador.generar();
